@@ -1,33 +1,99 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  /*background-color: #999999;*/
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.dice-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /*background-color: #ffffff;*/
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 50vw;
+  height: 105vw;
+  max-width: 167px;
+  max-height: 380px;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.dice-up {
+  position: relative;
+  max-width: 167px;
+  max-height: 167px;
+  height: 50vw;
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.dice-bottom {
+  position: relative;
+  max-width: 167px;
+  max-height: 167px;
+  height: 50vw;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.dice {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24vw;
+  font-family: arial;
+}
+
+@media (min-width: 334px) {
+  .dice {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 84px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 200px) {
+  .dice-up {
+    border-radius: 7px;
+  }
+
+  .dice-bottom {
+    border-radius: 7px;
+  }
+}
+
+@media (max-width: 100px) {
+  .dice-up {
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+
+  .dice-bottom {
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+}
+
+@media (max-width: 30px) {
+  .dice-up {
+    border: 1px solid black;
+    border-radius: 2px;
+  }
+
+  .dice-bottom {
+    border: 1px solid black;
+    border-radius: 2px;
   }
 }

@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  state = {
+    randomTop: "",
+    randomBottom: ""
+  }
+
+  handleWrapperRandom = () => {
+    this.setState({
+      randomTop: Math.floor(Math.random() * 6 + 1),
+      randomBottom: Math.floor(Math.random() * 6 + 1)
+    })
+    console.log('click');
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className='wrapper' onClick={this.handleWrapperRandom}>
+        <div className='dice-container'>
+          <div className='dice-up'><p className='random-nr-top dice'>{this.state.randomTop}</p></div>
+          <div className='dice-bottom'><p className='random-nr-bottom dice'>{this.state.randomBottom}</p></div>
+        </div>
       </div>
     );
   }
